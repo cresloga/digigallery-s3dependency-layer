@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  S3DependencyLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: s3-dependencies
+      Description: Dependencies for s3 bucker access
+      ContentUri: dependencies/
+      CompatibleRuntimes:
+        - nodejs8.10      
+      RetentionPolicy: Retain
+      Environment:
+        Variables:
+            S3_BUCKET: '{{resolve:ssm:DIGIGALLERY_PHOTO_BUCKET:1}}'
+            S3_REGION: '{{resolve:ssm:DIGIGALLERY_PHOTO_BUCKET_REGION:1}}'
