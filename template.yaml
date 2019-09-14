@@ -10,7 +10,3 @@ Resources:
       CompatibleRuntimes:
         - nodejs8.10      
       RetentionPolicy: Retain
-      Environment:
-        Variables:
-            S3_BUCKET: '{{resolve:ssm:DIGIGALLERY_PHOTO_BUCKET:1}}'
-            S3_REGION: '{{resolve:ssm:DIGIGALLERY_PHOTO_BUCKET_REGION:1}}'
