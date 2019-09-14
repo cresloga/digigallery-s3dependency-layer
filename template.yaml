@@ -6,7 +6,7 @@ Resources:
     Properties:
       LayerName: s3-dependencies
       Description: Dependencies for s3 bucker access
-      ContentUri: dependencies/
+      ContentUri: nodejs/
       CompatibleRuntimes:
         - nodejs8.10      
       RetentionPolicy: Retain
